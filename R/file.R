@@ -1,8 +1,8 @@
 .read_text <- function(fn) {
   # never know what kind of line endings you're going to get
   # there's probably a better way to deal with this
-  tryCatch({ scan(fn, what=character(), fileEncoding='UTF-16', sep='\r', quiet=TRUE) },
-    warning = function(e) { scan(fn, what=character(), fileEncoding='UTF-16', sep='\n', quiet=TRUE) }
+  tryCatch({ scan(fn, what=character(), fileEncoding='UTF-16', sep='\n', quiet=TRUE) },
+    warning = function(e) { scan(fn, what=character(), fileEncoding='UTF-16', sep='\r', quiet=TRUE) }
   )
 }
 
